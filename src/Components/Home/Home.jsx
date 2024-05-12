@@ -69,12 +69,14 @@ const Home = () => {
       </div>
       <div>
         <Marquee>
+          <div className="flex gap-10 shadow-y-lg p-7 my-5">
           <img src="https://xcare-demo.pbminfotech.com/demo3/wp-content/uploads/sites/6/2024/01/client-global-02.png" alt="" />
           <img src="https://xcare-demo.pbminfotech.com/demo3/wp-content/uploads/sites/6/2024/01/client-global-06.png" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
+          <img src="https://xcare-demo.pbminfotech.com/demo3/wp-content/uploads/sites/6/2024/01/client-global-05.png" alt="" />
+          <img src="https://xcare-demo.pbminfotech.com/demo3/wp-content/uploads/sites/6/2024/01/client-global-04.png" alt="" />
+          <img src="https://xcare-demo.pbminfotech.com/demo3/wp-content/uploads/sites/6/2024/01/client-global-03.png" alt="" />
+          <img src="https://xcare-demo.pbminfotech.com/demo3/wp-content/uploads/sites/6/2024/01/client-global-07.png" alt="" />
+          </div>
         </Marquee>
       </div>
     </div>
