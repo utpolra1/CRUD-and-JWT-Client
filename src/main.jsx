@@ -23,6 +23,7 @@ import Allblogs from './Components/CardIteams/Allblogs.jsx';
 import Wishlist from './Components/Wishlist/Wishlist.jsx';
 import ViewDetails from './Components/CardIteams/ViewDetails.jsx';
 import ViewDetailss from './Components/CardIteams/ViewDetailss.jsx';
+import UpdateBlog from './Components/CardIteams/UpdateBlog.jsx';
 
 
 const router = createBrowserRouter([
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
       {
         path:"/wishlist",
         element:<Wishlist></Wishlist>,
+      },
+      {
+        path:"//updateBlog/:id",
+        element:<UpdateBlog></UpdateBlog>
       }
     ]
   },

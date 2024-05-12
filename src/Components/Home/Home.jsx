@@ -123,7 +123,7 @@ const Home = () => {
 
       <div>
         <Marquee>
-          <div className="flex gap-10 shadow-y-lg p-7 my-5">
+          <div className="flex gap-10 shadow-y-lg p-7 my-16">
             <img
               src="https://xcare-demo.pbminfotech.com/demo3/wp-content/uploads/sites/6/2024/01/client-global-02.png"
               alt=""

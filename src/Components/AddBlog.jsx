@@ -18,9 +18,9 @@ const AddBlog = () => {
         const category=e.target.category.value;
         const  longDescription=e.target.longdescription.value;
         const currentTime = new Date().toISOString();
+        const email=user?.email;
 
-        const newblog={title,image,shortdescription,category,longDescription, currentTime};
-        console.log(newblog)
+        const newblog={title,image,shortdescription,category,longDescription, currentTime, email};
 
         fetch("http://localhost:5000/blog",{
             method:'POST',

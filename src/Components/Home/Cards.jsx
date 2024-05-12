@@ -51,11 +51,11 @@ const Cards = ({ datas }) => {
   return (
     <div>
       <div
-        className="border h-full shadow-xl flex rounded-lg p-7"
+        className="shadow-sm h-full flex rounded-lg p-7"
         data-aos="zoom-in-down"
       >
         <figure className="">
-          <img className="w-[2500px] h-[400px] rounded-xl" src={image} alt="Shoes" />
+          <img className="w-[570px] h-[400px] rounded-xl" src={image} alt="Shoes" />
         </figure>
         <div className="card-body" data-aos="flip-right">
           <h2 className="card-title">{title}</h2>
