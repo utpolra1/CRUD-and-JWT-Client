@@ -1,13 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import Hooks from "../Hooks/Hooks";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, Navigate, useParams } from "react-router-dom";
 import { authContext } from "../Firebase/AuthProvider";
+import { toast } from "react-toastify";
 
 const ViewDetails = () => {
   const { data, loading } = Hooks();
   const [singleData, setSingleData] = useState();
   const { _id } = useParams();
-  const {user}=useContext(authContext);
+  const { user } = useContext(authContext);
   const [datas, setdatas] = useState();
 
   useEffect(() => {
@@ -23,6 +24,31 @@ const ViewDetails = () => {
       setSingleData(singleData);
     }
   }, [data, _id]);
+
+  //HandleAddcommetn add.....
+  const handleAddComment = (e) => {
+    e.preventDefault();
+
+    const id = datas?._id;
+    const email = user?.email;
+    const textcomment = e.target.textComment.value;
+
+    const newComents = { email, id, textcomment };
+    console.log(newComents);
+
+    fetch("http://localhost:5000/comments",{
+        method:'POST',
+        headers:{
+            'content-type':'application/json'
+        },
+        body: JSON.stringify(newComents)
+    })
+    .then(res=>res.json)
+    .then(data=>{
+      toast.success("Comment Added Success");
+    })
+  };
+
   return (
     <div>
       <div className="">
@@ -79,11 +105,13 @@ const ViewDetails = () => {
                     </h1>
                   </div>
                   <div>
-                    {
-                      datas?.email === user.email && (<div>
-                        <NavLink to={`/updateBlog/${datas?._id}`}><button className="btn">Update Blog</button></NavLink>
-                      </div>)
-                    }
+                    {datas?.email === user.email && (
+                      <div>
+                        <NavLink to={`/updateBlog/${datas?._id}`}>
+                          <button className="btn">Update Blog</button>
+                        </NavLink>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -91,6 +119,28 @@ const ViewDetails = () => {
           )}
         </div>
       </div>
+      {datas?.email === user.email && (
+        <div className="m-10 flex gap-5 items-center">
+          <div className="items-center text-center">
+            <img src={user?.photoURL} alt="" />
+            <h1 className="font-bold">{user.displayName}</h1>
+          </div>
+          <div>
+            <form
+              className="flex flex-col gap-4"
+              onSubmit={handleAddComment}
+              action=""
+            >
+              <textarea
+                className="w-[600px] h-[200px] rounded-xl"
+                name="textComment"
+                id=""
+              ></textarea>
+              <button className="btn">Add Comment</button>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

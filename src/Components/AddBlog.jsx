@@ -32,7 +32,7 @@ const AddBlog = () => {
         .then(res=>res.json)
         .then(data=>{
           navigate("/");
-          toast.success("Product Added Success");
+          toast.success("Blog Added Success");
         })
     }
   return (
