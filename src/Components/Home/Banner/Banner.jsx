@@ -29,7 +29,7 @@ const Banner = () => {
             className="flex h-full items-center justify-center bg-gray-400 dark:bg-gray-700 dark:text-white"
             style={{
               backgroundImage:
-                "url(https://i.ibb.co/CVpFBg2/Fotolia-37550732-Subscription-Monthly-XXL-940x380.png)",
+                "url(https://i.ibb.co/THDtFQr/banner2.webp)",
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
               width: "100%",

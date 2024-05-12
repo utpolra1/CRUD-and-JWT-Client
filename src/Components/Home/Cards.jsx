@@ -55,7 +55,7 @@ const Cards = ({ datas }) => {
         data-aos="zoom-in-down"
       >
         <figure className="">
-          <img className="w-[800px] h-[300px] rounded-xl mt-4" src={image} alt="Shoes" />
+          <img className="w-[2500px] h-[400px] rounded-xl" src={image} alt="Shoes" />
         </figure>
         <div className="card-body" data-aos="flip-right">
           <h2 className="card-title">{title}</h2>
