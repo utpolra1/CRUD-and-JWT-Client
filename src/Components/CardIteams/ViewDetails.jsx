@@ -1,15 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
 import Hooks from "../Hooks/Hooks";
-import { NavLink, Navigate, useParams } from "react-router-dom";
+import { NavLink, Navigate, useLoaderData, useParams } from "react-router-dom";
 import { authContext } from "../Firebase/AuthProvider";
 import { toast } from "react-toastify";
 
 const ViewDetails = () => {
   const { data, loading } = Hooks();
-  const [singleData, setSingleData] = useState();
+  const [singleData, setSingleData] = useState([]);
   const { _id } = useParams();
   const { user } = useContext(authContext);
-  const [datas, setdatas] = useState();
+  const [datas, setdatas] = useState([]);
+  const [commentData, SetCommentData] = useState([]);
+  const [singleComment, SetaSigleComment] = useState([]);
 
   useEffect(() => {
     if (data) {
@@ -34,20 +36,38 @@ const ViewDetails = () => {
     const textcomment = e.target.textComment.value;
 
     const newComents = { email, id, textcomment };
-    console.log(newComents);
-
-    fetch("http://localhost:5000/comments",{
-        method:'POST',
-        headers:{
-            'content-type':'application/json'
-        },
-        body: JSON.stringify(newComents)
+    fetch("http://localhost:5000/comments", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newComents),
     })
-    .then(res=>res.json)
-    .then(data=>{
-      toast.success("Comment Added Success");
-    })
+      .then((res) => res.json)
+      .then((data) => {
+        toast.success("Comment Added Success");
+      });
   };
+
+  //coment data load
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch("http://localhost:5000/comments");
+      const data = await res.json();
+      SetCommentData(data);
+    };
+    fetchData();
+  }, [commentData]);
+
+  useEffect(() => {
+    if (commentData) {
+      const filteredComments = commentData.filter(
+        (comment) => comment.id === datas?._id
+      );
+      // Set the filtered comments array to the state
+      SetaSigleComment(filteredComments);
+    }
+  }, [commentData, datas?._id]);
 
   return (
     <div>
@@ -118,6 +138,24 @@ const ViewDetails = () => {
             </>
           )}
         </div>
+      </div>
+      <div>
+        {singleComment?.map((item) => (
+          <div>
+            <div className="border m-5 rounded-lg shadow-md ">
+              <h1 className="text-3xl p-5 font-bold">{item?.textcomment}</h1>
+              <div>
+                {item?.email === user.email && (
+                  <div>
+                    <NavLink to={`/updatecomments/${item?._id}`}>
+                      <button className="m-4 btn">Edite Comments</button>
+                    </NavLink>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
       {datas?.email === user.email && (
         <div className="m-10 flex gap-5 items-center">

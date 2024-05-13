@@ -24,6 +24,7 @@ import Wishlist from './Components/Wishlist/Wishlist.jsx';
 import ViewDetails from './Components/CardIteams/ViewDetails.jsx';
 import ViewDetailss from './Components/CardIteams/ViewDetailss.jsx';
 import UpdateBlog from './Components/CardIteams/UpdateBlog.jsx';
+import UpdateComments from './Components/CardIteams/UpdateComments.jsx';
 
 
 const router = createBrowserRouter([
@@ -58,7 +59,7 @@ const router = createBrowserRouter([
       },
       {
         path:"/blogdetails/:_id",
-        element:<PrivetRoute><ViewDetails></ViewDetails></PrivetRoute>
+        element:<PrivetRoute><ViewDetails></ViewDetails></PrivetRoute>,
       },
       {
         path:"blogdetailss/:_id",
@@ -73,10 +74,16 @@ const router = createBrowserRouter([
         element:<Wishlist></Wishlist>,
       },
       {
-        path:"//updateBlog/:id",
+        path:"/updateBlog/:id",
         element:<UpdateBlog></UpdateBlog>,
         loader:({params})=>
           fetch(`http://localhost:5000/blog/${params.id}`)
+      },
+      {
+        path:"/updatecomments/:id",
+        element:<UpdateComments></UpdateComments>,
+        loader:({params})=>
+          fetch(`http://localhost:5000/comments/${params.id}`)
       }
     ]
   },
