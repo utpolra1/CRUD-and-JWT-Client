@@ -9,6 +9,7 @@ const ViewDetails = () => {
   const [singleData, setSingleData] = useState([]);
   const { _id } = useParams();
   const { user } = useContext(authContext);
+  console.log(user);
   const [datas, setdatas] = useState([]);
   const [commentData, SetCommentData] = useState([]);
   const [singleComment, SetaSigleComment] = useState([]);
@@ -33,9 +34,10 @@ const ViewDetails = () => {
 
     const id = datas?._id;
     const email = user?.email;
+    const image =user?.photoURL
     const textcomment = e.target.textComment.value;
 
-    const newComents = { email, id, textcomment };
+    const newComents = { email, id, textcomment,image };
     fetch("http://localhost:5000/comments", {
       method: "POST",
       headers: {
@@ -143,7 +145,10 @@ const ViewDetails = () => {
         {singleComment?.map((item) => (
           <div>
             <div className="border m-5 rounded-lg shadow-md ">
-              <h1 className="text-3xl p-5 font-bold">{item?.textcomment}</h1>
+              <div className="flex items-center pl-6">
+                <img className="w-24 h-20 rounded-full" src={item?.image} alt="" />
+                <h1 className="text-3xl p-5 font-bold">{item?.textcomment}</h1>
+              </div>
               <div>
                 {item?.email === user.email && (
                   <div>
@@ -157,7 +162,7 @@ const ViewDetails = () => {
           </div>
         ))}
       </div>
-      {datas?.email === user.email && (
+      {datas?.email !== user.email && (
         <div className="m-10 flex gap-5 items-center">
           <div className="items-center text-center">
             <img src={user?.photoURL} alt="" />
