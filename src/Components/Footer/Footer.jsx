@@ -6,18 +6,12 @@ const Footer = () => {
     <footer>
       <footer className="footer p-10 bg-base-300 text-base-content items-center">
         <nav>
-            <a className="footer-title" href="">Services</a>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/allArt&craft">All Art & craft</NavLink>
-            <NavLink to="/mycart">My Art&Craft</NavLink>
-            <NavLink to="/addcraft">Add Craft</NavLink>
-        </nav>
-        <nav>
-          <h6 className="footer-title">Company</h6>
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/addblog">Add Blog</NavLink>
+          <NavLink to="/allblogs">All blogs</NavLink>
+          <NavLink to="/featuredblogs">Featured Blogs</NavLink>
+          <NavLink to="wishlist">Wishlist</NavLink>
+          <NavLink to="about">Profile</NavLink>
         </nav>
         <nav>
           <h6 className="footer-title">Social</h6>
@@ -60,7 +54,7 @@ const Footer = () => {
       </footer>
       <footer className="footer footer-center p-4 bg-base-300 text-base-content">
         <aside>
-          <p>Copyright © 2024 - All right reserved by Arts and Crafts</p>
+          <p>Copyright © 2024 - All right reserved by Health & Care</p>
         </aside>
       </footer>
     </footer>

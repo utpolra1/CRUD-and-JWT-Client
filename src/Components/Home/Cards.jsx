@@ -34,7 +34,7 @@ const Cards = ({ datas }) => {
         })
         .then(res=>res.json)
         .then(data=>{
-          toast.success("Product Added Success");
+          toast.success("Wishlist Added Success");
         })
     }
   }
@@ -49,15 +49,12 @@ const Cards = ({ datas }) => {
   // }, [data, _id]);
 
   return (
-    <div>
       <div
-        className="shadow-sm h-full flex rounded-lg p-7"
+        className="shadow-sm flex flex-col lg:flex-row rounded-lg p-7"
         data-aos="zoom-in-down"
       >
-        <figure className="">
-          <img className="w-[570px] h-[400px] rounded-xl" src={image} alt="Shoes" />
-        </figure>
-        <div className="card-body" data-aos="flip-right">
+        <div className="w-[50%] ml-8 justify-center flex"><img className="w-[800px] lg:h-[400px] rounded-xl items-center" src={image} alt="Shoes" /></div>
+        <div className="card-body lg:w-[50%]" data-aos="flip-right">
           <h2 className="card-title">{title}</h2>
           <p>
             <span className="font-bold">Description: </span>
@@ -77,7 +74,6 @@ const Cards = ({ datas }) => {
             </div>
           </div>
         </div>
-      </div>
     </div>
   );
 };

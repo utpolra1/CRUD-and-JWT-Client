@@ -9,7 +9,6 @@ const ViewDetails = () => {
   const [singleData, setSingleData] = useState([]);
   const { _id } = useParams();
   const { user } = useContext(authContext);
-  console.log(user);
   const [datas, setdatas] = useState([]);
   const [commentData, SetCommentData] = useState([]);
   const [singleComment, SetaSigleComment] = useState([]);
@@ -78,7 +77,7 @@ const ViewDetails = () => {
           {datas && (
             <>
               <div className="card glass">
-                <div className="grid lg:grid-cols-3">
+                <div className="">
                   <div className="col-span-2">
                     <figure>
                       <img
@@ -89,48 +88,19 @@ const ViewDetails = () => {
                     </figure>
                   </div>
                   <div className="flex flex-col gap-5 pl-3">
-                    <h2 className="card-title mt-10">{datas.item_name}</h2>
-                    <h1 className="font-bold">
-                      Segment_name: {datas.subcategory_Name}
-                    </h1>
-                    <h1>
-                      <span className="font-bold">UserName: </span>
-                      {datas?.userName}
-                    </h1>
+                    <h2 className="card-title mt-10">{datas?.title}</h2>
                     <h1>
                       <span className="font-bold">Description: </span>
                       {datas.shortdescription}
                     </h1>
-                    <h1>
-                      <span className="font-bold">Price: </span>
-                      {datas.price}
-                    </h1>
-                    <h1>
-                      <span className="font-bold">Status: </span>
-                      {datas.stockStatus}
-                    </h1>
-                    <h1>
-                      <span className="font-bold">Email: </span>
-                      {datas.email}
-                    </h1>
-                    <h1>
-                      <span className="font-bold">Customization: </span>
-                      {datas?.customization}
-                    </h1>
-                    <h1>
-                      <span className="font-bold">Processing_time: </span>
-                      {datas?.processing_time}
-                    </h1>
-                    <h1>
-                      <span className="font-bold">Rating: </span>
-                      {datas?.rating}
-                    </h1>
+
+                    <h1><span className="font-bold">More Details: </span>{datas?.longDescription}</h1>
                   </div>
                   <div>
                     {datas?.email === user.email && (
                       <div>
                         <NavLink to={`/updateBlog/${datas?._id}`}>
-                          <button className="btn">Update Blog</button>
+                          <button className="btn m-10">Update Blog</button>
                         </NavLink>
                       </div>
                     )}
@@ -147,7 +117,7 @@ const ViewDetails = () => {
             <div className="border m-5 rounded-lg shadow-md ">
               <div className="flex items-center pl-6">
                 <img className="w-24 h-20 rounded-full" src={item?.image} alt="" />
-                <h1 className="text-3xl p-5 font-bold">{item?.textcomment}</h1>
+                <h1 className="lg:text-3xl p-5 font-bold">{item?.textcomment}</h1>
               </div>
               <div>
                 {item?.email === user.email && (
@@ -175,9 +145,10 @@ const ViewDetails = () => {
               action=""
             >
               <textarea
-                className="w-[600px] h-[200px] rounded-xl"
+                className="lg:w-[600px] lg:h-[200px] rounded-xl"
                 name="textComment"
                 id=""
+                placeholder="Enter Your Comments Here....."
               ></textarea>
               <button className="btn">Add Comment</button>
             </form>

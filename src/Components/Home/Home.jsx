@@ -52,8 +52,8 @@ const Home = () => {
             alt=""
           />
         </div>
-        <div className="items-center text-center flex flex-col justify-center gap-5">
-          <h1 className="text-3xl font-bold">
+        <div className="items-center lg:text-center flex flex-col justify-center gap-5">
+          <h1 className="text-3xl font-bold items-center">
             Are you looking for a dentist give you that special smile?
           </h1>
           <div>
@@ -73,7 +73,7 @@ const Home = () => {
       <div>
         <h1 className="text-3xl text-center font-bold mt-16">How it helps you stay strong</h1>
       </div>
-      <div className="flex gap-5 justify-center items-center text-center mt-5">
+      <div className="flex flex-col lg:flex-row gap-5 justify-center items-center text-center mt-5">
         <div>
           <img
             className="rounded-lg w-[600px] h-[320px]"

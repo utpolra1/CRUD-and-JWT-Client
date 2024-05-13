@@ -18,11 +18,11 @@ const Banner = () => {
               height: "100%",
             }}
           >
-            <div className="lg:pr-[650px]">
-              <h1 className="text-3xl font-bold">
-                Best Mordern Handmade <br />& Craft art Colllection{" "}
+            <div className="lg:pl-[650px] text-white pl-8">
+              <h1 className="lg:text-3xl font-bold text-white">
+              Digital Operation 
               </h1>
-              <p>Designed by artists, made by us, just for you.</p>
+              <p>Digital Opration is a technique used for thousands</p>
             </div>
           </div>
           <div
@@ -36,13 +36,12 @@ const Banner = () => {
               height: "100%",
             }}
           >
-            <div>
-              <h1 className="text-black font-bold text-3xl">
-                Handmade with patience and love <br /> for the artisanal craft
+            <div className="lg:pr-[400px] pl-5">
+              <h1 className="text-black font-bold lg:text-3xl">
+                Bringing you the Best HealthCare
               </h1>
               <p>
-                Engage in family-friendly crafting activities, with step-by-step
-                guides
+              Health professionals use a wide range of instruments 
               </p>
             </div>
           </div>
@@ -57,8 +56,8 @@ const Banner = () => {
               height: "100%",
             }}
           >
-            <div className=" text-white">
-              <h1 className="text-3xl font-bold">
+            <div className="lg:pr-[500px] pl-3">
+              <h1 className="lg:text-3xl font-bold">
                 Pamper Yourself with Handmade Bath <br /> and Beauty Products
               </h1>
               <p>Explore the intersection of crafting and culinary arts</p>

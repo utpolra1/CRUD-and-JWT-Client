@@ -12,9 +12,7 @@ const Allblogs = () => {
           <div className='items-center text-center'><span className="loading loading-spinner text-primary w-44"></span></div>
         </div>
       ) : (
-        <div className="items-center">
-          <div className="overflow-x-auto ">
-          </div>
+        <div className="items-center grid">
           {data.map((datas) => (
             <BlogAll key={datas.id} datas={datas}></BlogAll>
           ))}

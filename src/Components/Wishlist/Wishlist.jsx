@@ -56,7 +56,7 @@ const Wishlist = () => {
               setItem(remaining);
             }
           });
-          console.log("delte successs")
+          console.log("delete successs")
       }
     });
   };

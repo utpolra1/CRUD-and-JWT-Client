@@ -46,7 +46,7 @@ const Navbar = () => {
           <NavLink to="/">
             <img
               className="w-32 h-28"
-              src="https://i.ibb.co/7JvFxZz/Eckersley-s-Logo.jpg"
+              src="https://i.ibb.co/JCP72n2/Screenshot-5.png"
               alt=""
             />
           </NavLink>
