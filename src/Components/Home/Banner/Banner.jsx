@@ -58,9 +58,9 @@ const Banner = () => {
           >
             <div className="lg:pr-[500px] pl-3">
               <h1 className="lg:text-3xl font-bold">
-                Pamper Yourself with Handmade Bath <br /> and Beauty Products
+              Different Types of Doctors & <br /> Medical Specialists
               </h1>
-              <p>Explore the intersection of crafting and culinary arts</p>
+              <p>If you're diagnosed with skin cancer, dermatologists <br /> can provide treatments</p>
             </div>
           </div>
         </Carousel>
