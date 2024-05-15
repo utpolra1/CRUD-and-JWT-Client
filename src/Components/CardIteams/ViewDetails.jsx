@@ -33,11 +33,11 @@ const ViewDetails = () => {
 
     const id = datas?._id;
     const email = user?.email;
-    const image =user?.photoURL
+    const image = user?.photoURL;
     const textcomment = e.target.textComment.value;
 
-    const newComents = { email, id, textcomment,image };
-    fetch("http://localhost:5000/comments", {
+    const newComents = { email, id, textcomment, image };
+    fetch("https://b9-a-assignment-11-server.vercel.app/comments", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -53,7 +53,9 @@ const ViewDetails = () => {
   //coment data load
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("http://localhost:5000/comments");
+      const res = await fetch(
+        "https://b9-a-assignment-11-server.vercel.app/comments"
+      );
       const data = await res.json();
       SetCommentData(data);
     };
@@ -94,7 +96,10 @@ const ViewDetails = () => {
                       {datas.shortdescription}
                     </h1>
 
-                    <h1><span className="font-bold">More Details: </span>{datas?.longDescription}</h1>
+                    <h1>
+                      <span className="font-bold">More Details: </span>
+                      {datas?.longDescription}
+                    </h1>
                   </div>
                   <div>
                     {datas?.email === user.email && (
@@ -116,8 +121,14 @@ const ViewDetails = () => {
           <div>
             <div className="border m-5 rounded-lg shadow-md ">
               <div className="flex items-center pl-6">
-                <img className="w-24 h-20 rounded-full" src={item?.image} alt="" />
-                <h1 className="lg:text-3xl p-5 font-bold">{item?.textcomment}</h1>
+                <img
+                  className="w-24 h-20 rounded-full"
+                  src={item?.image}
+                  alt=""
+                />
+                <h1 className="lg:text-3xl p-5 font-bold">
+                  {item?.textcomment}
+                </h1>
               </div>
               <div>
                 {item?.email === user.email && (

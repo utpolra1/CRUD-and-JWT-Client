@@ -15,30 +15,25 @@ const UpdateBlog = () => {
     const form = e.target;
     const title = form.title.value;
     const image = form.image.value;
-    const category =form.category.value;
-    const shortdescription =form.shortdescription.value;
-    const longDescription =form.longdescription.value;
+    const category = form.category.value;
+    const shortdescription = form.shortdescription.value;
+    const longDescription = form.longdescription.value;
     const jobData = {
       title,
       image,
       shortdescription,
-      longDescription
+      longDescription,
     };
 
-    fetch(
-      `http://localhost:5000/blog/${_id}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(jobData),
-      }
-    )
+    fetch(`https://b9-a-assignment-11-server.vercel.app/blog/${_id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(jobData),
+    })
       .then((res) => res.json())
-      .then((data) =>
-        toast.success("Blog Is Updated")
-    )
+      .then((data) => toast.success("Blog Is Updated"));
   };
   return (
     <div className="flex justify-center items-center min-h-[calc(100vh-306px)] my-12">
@@ -63,7 +58,7 @@ const UpdateBlog = () => {
 
             <div>
               <label className="text-gray-700 " htmlFor="image">
-              Image_url
+                Image_url
               </label>
               <input
                 id="image"
@@ -74,7 +69,7 @@ const UpdateBlog = () => {
             </div>
             <div>
               <label className="text-gray-700 " htmlFor="category">
-              Category
+                Category
               </label>
               <input
                 id="category"
@@ -85,7 +80,7 @@ const UpdateBlog = () => {
             </div>
             <div>
               <label className="text-gray-700 " htmlFor="shortdescription">
-              Short Description
+                Short Description
               </label>
               <input
                 id="shortdescription"
@@ -97,7 +92,7 @@ const UpdateBlog = () => {
           </div>
           <div className="flex flex-col gap-2 mt-4">
             <label className="text-gray-700 " htmlFor="description">
-            Long Description
+              Long Description
             </label>
             <textarea
               className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"

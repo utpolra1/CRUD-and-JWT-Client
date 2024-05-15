@@ -8,15 +8,12 @@ const BlogAll = ({ datas }) => {
   const { _id, title, shortdescription, image, category } = datas || {};
   const { data, loading } = Hooks();
   const { user } = useContext(authContext);
-
   const handleWishlist = (e) => {
     e.preventDefault();
     if (data && user && user.email) {
       const foundData = data.find((item) => item._id === _id);
       const foundDatas = { ...foundData, email: user.email };
-      console.log(foundDatas);
-
-      fetch("http://localhost:5000/wishlist", {
+      fetch("https://b9-a-assignment-11-server.vercel.app/wishlist", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -34,9 +31,13 @@ const BlogAll = ({ datas }) => {
       <div className="overflow-x-auto mt-7 grid grid-cols-2">
         <div className="flex flex-col">
           <h1 className="font-bold">{title}</h1>
-          <img className="lg:w-[1000px] rounded-md h-[350px]" src={image} alt="" />
+          <img
+            className="lg:w-[1000px] rounded-md h-[350px]"
+            src={image}
+            alt=""
+          />
           <h1>{shortdescription}</h1>
-          <h1>{category}</h1>
+          <h1><span className="font-bold">Category: </span>{category}</h1>
           <h1></h1>
           <div className="flex gap-5">
             <NavLink to={`/blogdetails/${_id}`}>

@@ -19,7 +19,9 @@ const Wishlist = () => {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      const res = await fetch("http://localhost:5000/wishlist");
+      const res = await fetch(
+        "https://b9-a-assignment-11-server.vercel.app/wishlist"
+      );
       const data = await res.json();
       setdata(data);
       setLoading(false);
@@ -40,7 +42,7 @@ const Wishlist = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/wishlist/${id}`, {
+        fetch(`https://b9-a-assignment-11-server.vercel.app/wishlist/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -56,7 +58,7 @@ const Wishlist = () => {
               setItem(remaining);
             }
           });
-          console.log("delete successs")
+        console.log("delete successs");
       }
     });
   };

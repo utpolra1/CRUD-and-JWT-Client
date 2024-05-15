@@ -57,7 +57,7 @@ const Banner = () => {
             }}
           >
             <div className="lg:pr-[500px] pl-3">
-              <h1 className="lg:text-3xl font-bold">
+            <h1 className="lg:text-3xl font-bold">
               Different Types of Doctors & <br /> Medical Specialists
               </h1>
               <p>If you're diagnosed with skin cancer, dermatologists <br /> can provide treatments</p>
