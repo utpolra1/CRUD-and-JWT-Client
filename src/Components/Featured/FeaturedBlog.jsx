@@ -1,54 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "antd";
 
-const columns = [
-  {
-    title: "S.No",
-    dataIndex: "serial",
-    width: "10%",
-  },
-  {
-    title: "Title",
-    dataIndex: "name",
-    filters: [
-      {
-        text: "surgery",
-        value: "surgery",
-      },
-      {
-        text: "Category 1",
-        value: "Category 1",
-      },
-      {
-        text: "Category 2",
-        value: "Category 2",
-      },
-    ],
-    onFilter: (value, record) => record.name.startsWith(value),
-    width: "30%",
-  },
-  {
-    title: "BlogOwner",
-    dataIndex: "BlogOwner",
-    sorter: (a, b) => a.age - b.age,
-  },
-  {
-    title: "Owner-Profile",
-    dataIndex: "OwnerProfile",
-    filters: [
-      {
-        text: "London",
-        value: "London",
-      },
-      {
-        text: "New York",
-        value: "New York",
-      },
-    ],
-    onFilter: (value, record) => record.address.startsWith(value),
-    width: "40%",
-  },
-];
+
 const FeaturedBlog = () => {
   const [datas, setDatas] = useState([]);
   console.log(datas);
