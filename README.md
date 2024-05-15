@@ -1,23 +1,22 @@
 # React + Vite
 
 
-Welcome to Art & Craft !
+Welcome to Medical Health !
 
-Live Site URL: https://b9a-assignment-10.web.app/
+# Medical Health
 
-About Art & Craft:
-Art & Craft is your one-stop destination for all things art and craft! We provide a wide range of supplies and inspiration to fuel your creativity.
+Welcome to Medical Health, your one-stop destination for all things related to health and wellness!
 
-Features:
-Extensive Product Catalog: Explore our vast selection of art supplies, ranging from paints and brushes to beads and fabrics, all sourced from trusted brands.
-Inspiration Gallery: Browse through our curated collection of DIY projects and tutorials to spark your imagination and discover new crafting techniques.
-Community Forum: Join our community of fellow craft enthusiasts to share ideas, ask questions, and showcase your latest creations.
-Weekly Workshops: Participate in our interactive workshops led by experienced artisans, covering various crafting disciplines and skill levels.
-Customization Services: Take advantage of our personalized services, including custom framing, engraving, and bespoke crafting kits, tailored to your specific needs.
+Visit the live site: https://b9-crud-and-jwt-client.web.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
 
-Currently, two official plugins are available:
+- **Comprehensive Health Information**: Access a wide range of articles, resources, and guides covering various health topics, from general wellness tips to specific medical conditions.
+- **Find Doctors**: Use our search feature to find qualified doctors and healthcare professionals near you, filtering by specialty, location, and more.
+- **Appointment Booking**: Easily schedule appointments with healthcare providers directly through our platform, saving you time and hassle.
+- **Community Support**: Connect with others in our supportive online community, where you can share experiences, ask questions, and receive advice from peers and professionals alike.
+- **Healthy Living Tips**: Explore curated content on nutrition, fitness, mental health, and lifestyle habits to help you live your best life.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## About
+
+Medical Health is dedicated to empowering individuals to take control of their health and well-being by providing reliable information, access to healthcare services, and a supportive community environment. Our mission is to promote health literacy, facilitate healthcare access, and foster a culture of proactive wellness.
