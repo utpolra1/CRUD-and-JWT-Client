@@ -93,7 +93,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/updateBlog/:id",
-        element: <UpdateBlog></UpdateBlog>,
+        element: <PrivetRoute><UpdateBlog></UpdateBlog></PrivetRoute>,
         loader: ({ params }) =>
           fetch(
             `https://b9-a-assignment-11-server.vercel.app/blog/${params.id}`
@@ -101,7 +101,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/updatecomments/:id",
-        element: <UpdateComments></UpdateComments>,
+        element:<PrivetRoute><UpdateComments></UpdateComments></PrivetRoute>,
         loader: ({ params }) =>
           fetch(
             `https://b9-a-assignment-11-server.vercel.app/comments/${params.id}`
